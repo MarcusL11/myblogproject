@@ -1,0 +1,17 @@
+{% extends "../base.html" %}
+{% block body %}
+<div class="flex justify-center "> 
+    <h1 class="text-xl font-bold"> Blog posts </h1>
+</div>
+{% endblock%}
+{% block content %}
+<div class="flex justify-center mt-12"> 
+    <ul>
+        {% for blog in blogs %}
+        <li class="hover:text-primary hover:scale-105 duration-500">
+            <a href="{% url "blogpage" slug=blog.slug %}">{{ blog.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
